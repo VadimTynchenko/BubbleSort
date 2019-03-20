@@ -2,7 +2,7 @@ package String;
 
 public class StringArrays {
     public static void main(String[] args) {
-        String str[] = {"Эта ", "строка ", " является ", "тестом."};
+        String[] str = {"Эта ", "строка ", " является ", "тестом."};
 
         System.out.println("Исходный массив: ");
         for (String s :
