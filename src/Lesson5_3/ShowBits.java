@@ -1,9 +1,9 @@
 package Lesson5_3;
 
-public class ShowBits {
-    int numBits;
+class ShowBits {
+    private int numBits;
 
-    public ShowBits(int numBits) {
+    ShowBits(int numBits) {
         this.numBits = numBits;
     }
 
