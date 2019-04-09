@@ -3,9 +3,21 @@ package Unit7.BasicsOfInheritance;
 
 // Класс, описывающий двумерные объекты
 class TwoDShape {
-    double height;
-    double width;
-    String name;
+    private double height;
+    private double width;
+    private String name;
+
+    double getHeight() {
+        return height;
+    }
+
+    double getWidth() {
+        return width;
+    }
+
+    String getName() {
+        return name;
+    }
 
     TwoDShape(double height, double width, String name) {
         this.height = height;
@@ -29,7 +41,7 @@ class Triangle extends TwoDShape {
     }
 
     void area() {
-        System.out.println("Площадь = " + width * height / 2);   // Из класса Triangle можно обратиться
+        System.out.println("Площадь = " + getWidth() * getHeight() / 2);   // Из класса Triangle можно обратиться
                                                     // к членам класса TwoDShape так, как если
                                                     // это были бы его собственные члены
     }
@@ -47,12 +59,12 @@ class Rectangle extends TwoDShape {
     }
 
     void isSquare() {
-        if (height == width) System.out.println("Квадрат");
+        if (getHeight() == getWidth()) System.out.println("Квадрат");
         else System.out.println("Не квадрат");
     }
 
     void area() {
-        System.out.println("Площадь = " + width * height);
+        System.out.println("Площадь = " + getWidth() * getHeight());
     }
 }
 
@@ -71,7 +83,7 @@ class Shapes {
     }
 
     private static void showInfoRectangle(Rectangle rectangle) {
-        System.out.println("Информация о " + rectangle.name + ":");
+        System.out.println("Информация о " + rectangle.getName() + ":");
         rectangle.isSquare();
         rectangle.showDim();
         rectangle.area();
@@ -79,7 +91,7 @@ class Shapes {
     }
 
     private static void showInfoTriangle(Triangle triangle) {
-        System.out.println("Информация о " + triangle.name + ":");
+        System.out.println("Информация о " + triangle.getName() + ":");
         triangle.showStyle();
         triangle.showDim();
         triangle.area();
