@@ -40,16 +40,45 @@ class Triangle extends TwoDShape {
 
 }
 
+class Rectangle extends TwoDShape {
+
+    Rectangle(String name, double height, double width) {
+        super(height, width, name);
+    }
+
+    void isSquare() {
+        if (height == width) System.out.println("Квадрат");
+        else System.out.println("Не квадрат");
+    }
+
+    void area() {
+        System.out.println("Площадь = " + width * height);
+    }
+}
+
 class Shapes {
     public static void main(String[] args) {
         Triangle t1 = new Triangle("t1", 4.0, 4.0, "закрашенный");
         Triangle t2 = new Triangle("t2", 8.0, 12.0, "контурный");
+        Rectangle r1 = new Rectangle("r1", 10, 10);
+        Rectangle r2 = new Rectangle("r2", 20, 5);
 
-        showInfo(t1);
-        showInfo(t2);
+        showInfoTriangle(t1);
+        showInfoTriangle(t2);
+        showInfoRectangle(r1);
+        showInfoRectangle(r2);
+
     }
 
-    private static void showInfo(Triangle triangle) {
+    private static void showInfoRectangle(Rectangle rectangle) {
+        System.out.println("Информация о " + rectangle.name + ":");
+        rectangle.isSquare();
+        rectangle.showDim();
+        rectangle.area();
+        System.out.println();
+    }
+
+    private static void showInfoTriangle(Triangle triangle) {
         System.out.println("Информация о " + triangle.name + ":");
         triangle.showStyle();
         triangle.showDim();
