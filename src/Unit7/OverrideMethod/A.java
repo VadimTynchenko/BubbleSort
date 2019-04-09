@@ -2,7 +2,7 @@ package Unit7.OverrideMethod;
 
 // Переопределение метода
 class A {
-    int i, j;
+    private int i, j;
 
     A(int i, int j) {
         this.i = i;
@@ -16,7 +16,7 @@ class A {
 }
 
 class B extends A {
-    int k;
+    private int k;
 
     B(int i, int j, int k) {
         super(i, j);
@@ -25,6 +25,7 @@ class B extends A {
 
     // Отображение переменной k
     void show() {       // данный метод переопределяет метод show суперкласса A
+        super.show();
         System.out.println("k: " + k);
     }
 }
