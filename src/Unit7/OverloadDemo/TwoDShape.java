@@ -1,7 +1,7 @@
 package Unit7.OverloadDemo;
 
 // Использование динамической диспетчеризации методов
-public class TwoDShape {
+abstract public class TwoDShape {
     private double width;
     private double height;
     private String name;
@@ -57,10 +57,7 @@ public class TwoDShape {
         System.out.println("Ширина и высота = " + width + " " + height);
     }
 
-    double area() {
-        System.out.println("Метод area() должен быть переопределен");
-        return 0.0;
-    }
+    abstract double area();
 }
 
 // Подкласс для представления треугольников,
@@ -118,7 +115,7 @@ class Rectangle extends TwoDShape {
 
     // Создать квадрат
     Rectangle(double x) {
-        super(x, "прямоугольник");
+        super(x, "квадрат");
     }
 
     // Создать один объект на основе другого
@@ -145,7 +142,7 @@ class DynShapes {
         shapes[1] = new Rectangle(10.0);
         shapes[2] = new Rectangle(10.0, 4.0);
         shapes[3] = new Triangle(5.0);
-        shapes[4] = new TwoDShape(5.0, 1.7, "фигура");
+        shapes[4] = new Rectangle(5.0);
 
         for (TwoDShape num :
                 shapes) {
