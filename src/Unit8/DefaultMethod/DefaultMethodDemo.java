@@ -12,5 +12,8 @@ public class DefaultMethodDemo {
         // Вызов метода getAdminID() также возможет потому, поскольку
         // предоставляется его реализация по умолчанию в
         System.out.println("Идентификатор админа: " + obj.getAdminID());
+
+        // Вызов статического метода без использования ссылки на объект
+        System.out.println(MyIF.getUniversalID());
     }
 }
